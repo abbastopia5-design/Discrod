@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="السجل الدولي للدول المعترف بها لدى المنظمة الدولية للدول IEPO">
+
+  <title>IEPO | المنظمة الدولية للدول</title>
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+    :root {
+
+      --navy: #101e38;
+
+      --navy-light: #1b3153;
+
+      --gold: #c5a15c;
+
+      --bg: #f5f7fa;
+
+      --white: #ffffff;
+
+      --text: #202b3c;
+
+      --muted: #788497;
+
+      --border: #e7ebf0;
+
+    }
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      font-family: 'Cairo', sans-serif;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+    a {
+
+      text-decoration: none;
+
+      color: inherit;
+
+    }
+
+    button {
+
+      font-family: inherit;
+
+      cursor: pointer;
+
+    }
+
+    .topbar {
+
+      background: var(--navy);
+
+      color: white;
+
+      padding: 10px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      font-size: 12px;
+
+    }
+
+    .topbar span {
+
+      color: #d7c08e;
+
+    }
+
+    header {
+
+      background: white;
+
+      padding: 17px 7%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      border-bottom: 1px solid var(--border);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 10;
+
+    }
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+    .brand-logo {
+
+      width: 48px;
+
+      height: 48px;
+
+      border: 2px solid var(--gold);
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      color: var(--navy);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+    }
+
+    .brand h2 {
+
+      color: var(--navy);
+
+      font-size: 18px;
+
+      line-height: 1.5;
+
+    }
+
+    .brand p {
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+    }
+
+    nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 24px;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+    }
+
+    nav a:hover {
+
+      color: var(--gold);
+
+    }
+
+    .nav-button {
+
+      background: var(--navy);
+
+      color: white;
+
+      padding: 10px 18px;
+
+      border-radius: 7px;
+
+    }
+
+    .hero {
+
+      background: linear-gradient(120deg, #101e38, #1c355a);
+
+      color: white;
+
+      padding: 75px 8%;
+
+      text-align: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+    .hero::before {
+
+      content: "IEPO";
+
+      position: absolute;
+
+      font-size: 190px;
+
+      font-weight: 800;
+
+      color: rgba(255,255,255,.035);
+
+      left: 2%;
+
+      top: 0;
+
+    }
+
+    .hero-label {
+
+      color: #d9bf83;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 15px;
+
+    }
+
+    .hero h1 {
+
+      font-size: clamp(27px, 5vw, 43px);
+
+      margin-bottom: 14px;
+
+    }
+
+    .hero h1 span {
+
+      color: var(--gold);
+
+    }
+
+    .hero p {
+
+      color: #d2dbea;
+
+      max-width: 650px;
+
+      margin: auto;
+
+      font-size: 14px;
+
+      line-height: 2.2;
+
+    }
+
+    .hero-actions {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 28px;
+
+    }
+
+    .btn {
+
+      border: 1px solid var(--gold);
+
+      background: var(--gold);
+
+      color: var(--navy);
+
+      padding: 12px 24px;
+
+      border-radius: 7px;
+
+      font-weight: 700;
+
+      font-size: 13px;
+
+    }
+
+    .btn-outline {
+
+      background: transparent;
+
+      color: white;
+
+      border-color: rgba(255,255,255,.5);
+
+    }
+
+    .container {
+
+      width: 86%;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+    }
+
+    .stats {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: -28px;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+    .stat-card {
+
+      background: white;
+
+      padding: 24px;
+
+      border-radius: 10px;
+
+      border: 1px solid var(--border);
+
+      text-align: center;
+
+      box-shadow: 0 5px 20px rgba(16,30,56,.04);
+
+    }
+
+    .stat-card h2 {
+
+      color: var(--navy);
+
+      font-size: 30px;
+
+    }
+
+    .stat-card p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      margin-top: 5px;
+
+    }
+
+    .section {
+
+      padding: 65px 0;
+
+    }
+
+    .section-heading {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 25px;
+
+    }
+
+    .section-heading h2 {
+
+      font-size: 22px;
+
+      color: var(--navy);
+
+    }
+
+    .section-heading p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      margin-top: 4px;
+
+    }
+
+    .search-box {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin-bottom: 22px;
+
+    }
+
+    .search-box input {
+
+      flex: 1;
+
+      min-width: 0;
+
+      border: 1px solid var(--border);
+
+      border-radius: 7px;
+
+      padding: 13px 16px;
+
+      font-family: inherit;
+
+      outline: none;
+
+      background: white;
+
+    }
+
+    .search-box input:focus {
+
+      border-color: var(--gold);
+
+    }
+
+    .search-box button {
+
+      background: var(--navy);
+
+      color: white;
+
+      border: 0;
+
+      padding: 0 22px;
+
+      border-radius: 7px;
+
+    }
+
+    .table-wrap {
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 10px;
+
+      overflow-x: auto;
+
+    }
+
+    table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+      min-width: 600px;
+
+      text-align: right;
+
+    }
+
+    th {
+
+      background: #f0f3f7;
+
+      color: var(--navy);
+
+      font-size: 12px;
+
+      padding: 16px;
+
+    }
+
+    td {
+
+      padding: 16px;
+
+      border-top: 1px solid var(--border);
+
+      font-size: 12px;
+
+    }
+
+    .empty {
+
+      text-align: center;
+
+      padding: 50px 15px;
+
+      color: var(--muted);
+
+    }
+
+    .empty strong {
+
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 16px;
+
+      margin-bottom: 8px;
+
+    }
+
+    .status {
+
+      background: #eaf5ee;
+
+      color: #287548;
+
+      padding: 5px 10px;
+
+      border-radius: 20px;
+
+      font-size: 10px;
+
+    }
+
+    .about {
+
+      background: white;
+
+      border-top: 1px solid var(--border);
+
+      padding: 50px 8%;
+
+      text-align: center;
+
+    }
+
+    .about h2 {
+
+      color: var(--navy);
+
+      margin-bottom: 12px;
+
+    }
+
+    .about p {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 2.2;
+
+      max-width: 700px;
+
+      margin: auto;
+
+    }
+
+    footer {
+
+      background: var(--navy);
+
+      color: white;
+
+      text-align: center;
+
+      padding: 25px;
+
+      font-size: 11px;
+
+    }
+
+    footer span {
+
+      color: var(--gold);
+
+    }
+
+    @media(max-width: 750px) {
+
+      header {
+
+        padding: 13px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+      }
+
+      nav {
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 17px;
+
+        padding-bottom: 5px;
+
+        font-size: 11px;
+
+      }
+
+      .container {
+
+        width: 92%;
+
+      }
+
+      .hero {
+
+        padding: 55px 5%;
+
+      }
+
+      .stats {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-top: 18px;
+
+      }
+
+      .stat-card {
+
+        padding: 15px;
+
+      }
+
+      .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+      }
+
+      .section {
+
+        padding: 45px 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="topbar">
+
+    <span>IEPO | البوابة الرسمية</span>
+
+    <div>السجل الدولي للدول</div>
+
+  </div>
+
+  <header>
+
+    <a href="#" class="brand">
+
+      <div class="brand-logo">IEPO</div>
+
+      <div>
+
+        <h2>المنظمة الدولية للدول</h2>
+
+        <p>INTERNATIONAL ORGANIZATION OF STATES</p>
+
+      </div>
+
+    </a>
+
+    <nav>
+
+      <a href="#">الرئيسية</a>
+
+      <a href="#countries">سجل الدول</a>
+
+      <a href="#about">عن المنظمة</a>
+
+      <a href="#countries" class="nav-button">الدول المعترف بها</a>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-label">INTERNATIONAL ORGANIZATION OF STATES</div>
+
+      <h1>السجل الدولي <span>للدول</span></h1>
+
+      <p>
+
+        البوابة الرسمية للمنظمة الدولية للدول IEPO،
+
+        المخصصة لتوثيق الدول وتسجيل بياناتها ومتابعة
+
+        الاعترافات الرسمية ضمن إطار المنظمة.
+
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#countries" class="btn">استعراض الدول</a>
+
+        <a href="#about" class="btn btn-outline">عن المنظمة</a>
+
+      </div>
+
+    </section>
+
+    <div class="container">
+
+      <section class="stats">
+
+        <div class="stat-card">
+
+          <h2 id="countryCount">0</h2>
+
+          <p>الدول المسجلة</p>
+
+        </div>
+
+        <div class="stat-card">
+
+          <h2>IEPO</h2>
+
+          <p>المنظمة المشرفة على السجل</p>
+
+        </div>
+
+        <div class="stat-card">
+
+          <h2>2026</h2>
+
+          <p>السجل الإلكتروني</p>
+
+        </div>
+
+      </section>
+
+      <section class="section" id="countries">
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>الدول المعترف بها</h2>
+
+            <p>السجل الرسمي للدول التي تمت الموافقة على تسجيلها</p>
+
+          </div>
+
+        </div>
+
+        <div class="search-box">
+
+          <input
+
+            type="text"
+
+            id="searchInput"
+
+            placeholder="ابحث عن دولة أو رئيس دولة..."
+
+          >
+
+          <button onclick="searchCountries()">بحث</button>
+
+        </div>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>رقم التسجيل</th>
+
+                <th>اسم الدولة</th>
+
+                <th>رئيس الدولة</th>
+
+                <th>العاصمة</th>
+
+                <th>تاريخ الاعتراف</th>
+
+                <th>الحالة</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="countriesTable">
+
+              <tr>
+
+                <td colspan="6">
+
+                  <div class="empty">
+
+                    <strong>لا توجد دول مسجلة حالياً</strong>
+
+                    سيتم عرض الدول هنا بعد اعتماد طلبات تسجيلها من إدارة المنظمة.
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <section class="about" id="about">
+
+      <h2>عن المنظمة</h2>
+
+      <p>
+
+        المنظمة الدولية للدول IEPO هي منظمة تهدف إلى إنشاء سجل
+
+        منظم للدول المشاركة فيها، وتوثيق بياناتها الرسمية،
+
+        وتنظيم إجراءات تسجيلها والاعتراف بها ضمن إطار المنظمة.
+
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>© 2026 المنظمة الدولية للدول <span>IEPO</span></p>
+
+    <p>جميع الحقوق محفوظة</p>
+
+  </footer>
+
+  <script>
+
+    function searchCountries() {
+
+      const value = document.getElementById("searchInput").value.trim();
+
+      if (value) {
+
+        alert("سيتم تفعيل البحث عن الدول بعد ربط قاعدة البيانات.");
+
+      } else {
+
+        alert("اكتب اسم الدولة أو رئيس الدولة أولاً.");
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
